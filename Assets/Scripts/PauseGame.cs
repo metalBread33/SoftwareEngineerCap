@@ -36,4 +36,9 @@ public class PauseGame : MonoBehaviour
         Time.timeScale = 1f;
         paused = false;
     }
+
+    public void quit()
+    {
+        Application.Quit();
+    }
 }
