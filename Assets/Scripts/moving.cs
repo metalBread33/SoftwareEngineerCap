@@ -34,8 +34,14 @@ public class moving : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jump_up);
         }
 
+<<<<<<< Updated upstream
         if (rb.velocity.y < 0) {
             rb.velocity -= vecGravity * fallFaster * Time.deltaTime; 
+=======
+        if (rb.velocity.y < 0)
+        {
+            rb.velocity -= vecGravity * fallFaster * Time.deltaTime;
+>>>>>>> Stashed changes
         }
 
         Flip();
