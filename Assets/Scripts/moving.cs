@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class moving : MonoBehaviour
 {
     private float horizontal;
-    private float speed = 8f;
-    private float jump_up = 16f;
+    [SerializeField] int speed;
+    [SerializeField] int jump_up;
+    [SerializeField] float fallFaster;
     private bool is_Right = true;
+    Vector2 vecGravity;
 
     //connects to the Rigidbody 2D in unity 
     [SerializeField] private Rigidbody2D rb;
@@ -14,6 +17,11 @@ public class moving : MonoBehaviour
     //connects to ground check in unity to know when the character is "touching" the ground
     [SerializeField] private Transform onGround;
     [SerializeField] private LayerMask groundLayer;
+
+    void Start()
+    {
+        vecGravity = new Vector3(0, -Physics2D.gravity.y);
+    }
 
     void Update()
     {
@@ -26,10 +34,9 @@ public class moving : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jump_up);
         }
 
-        //if you are still holding onto the the button as we are moving up then we can jump a bit higher
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+        if (rb.velocity.y < 0)
         {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            rb.velocity -= vecGravity * fallFaster * Time.deltaTime;
         }
 
         Flip();
