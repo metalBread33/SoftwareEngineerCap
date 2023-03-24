@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class moving : MonoBehaviour
 {
     private float horizontal;
@@ -32,6 +33,7 @@ public class moving : MonoBehaviour
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jump_up);
+            AudioManager.instance.PlaySFX("Jump");
         }
 
         if (rb.velocity.y < 0)
