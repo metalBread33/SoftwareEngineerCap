@@ -6,7 +6,8 @@ using System;
 
 public class AudioManager : MonoBehaviour
 {
-    void awake()
+
+    private void awake()
     {
         if (instance == null)
         {
@@ -35,7 +36,6 @@ public class AudioManager : MonoBehaviour
             Debug.Log("Sound not found :(");
         else
         {
-            sFXSource.clip = sfx.clip;
             sFXSource.PlayOneShot(sfx.clip);
         }
     }
