@@ -7,17 +7,6 @@ using System;
 public class AudioManager : MonoBehaviour
 {
 
-/*
-    private void awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else Destroy(gameObject);
-    }
-*/
     public void PlayTrack(string name)
     {
         Sound track = Array.Find(tracks, x => x.name == name);
