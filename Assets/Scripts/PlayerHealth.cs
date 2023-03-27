@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
         health -= damage;
         if(health <= 0)
         {
+            AudioManager.instance.PlaySFX("Death");
             Destroy(gameObject);
         }
     }

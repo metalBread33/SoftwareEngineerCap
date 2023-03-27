@@ -7,6 +7,7 @@ using System;
 public class AudioManager : MonoBehaviour
 {
 
+/*
     private void awake()
     {
         if (instance == null)
@@ -16,7 +17,7 @@ public class AudioManager : MonoBehaviour
         }
         else Destroy(gameObject);
     }
-
+*/
     public void PlayTrack(string name)
     {
         Sound track = Array.Find(tracks, x => x.name == name);
@@ -42,6 +43,12 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else Destroy(gameObject);
         PlayTrack("Theme");
     }
     public Sound[] tracks, sFXs;

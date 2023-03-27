@@ -158,20 +158,24 @@ MonoBehaviour:
     volume: 0.506
     pitch: 0.1
   sFXs:
-  - name: 
-    clip: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 8300000, guid: 72907c7cb000b0c41a0b1bd9ddeacc12, type: 3}
     volume: 0
     pitch: 0
-  - name: 
-    clip: {fileID: 0}
+  - name: Death
+    clip: {fileID: 8300000, guid: dadba49467366e04bacf0ff2506590cb, type: 3}
     volume: 0
     pitch: 0
-  - name: 
-    clip: {fileID: 0}
+  - name: Coin
+    clip: {fileID: 8300000, guid: 0d07155ff352eed46b02b58ee180a727, type: 3}
     volume: 0
     pitch: 0
-  - name: 
-    clip: {fileID: 0}
+  - name: Attack
+    clip: {fileID: 8300000, guid: f476b530ae2b3e542bb5e76dd2ab36b6, type: 3}
+    volume: 0
+    pitch: 0
+  - name: Victory
+    clip: {fileID: 8300000, guid: 0c3f90e1e057c904a98d8123fa44e248, type: 3}
     volume: 0
     pitch: 0
   trackSource: {fileID: 1529032145}

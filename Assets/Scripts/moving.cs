@@ -33,8 +33,8 @@ public class moving : MonoBehaviour
         //if we are on the ground then it sets our jump_up power to our y value to go up
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
+            AudioManager.instance.PlaySFX("Jump");
             rb.velocity = new Vector2(rb.velocity.x, jump_up);
-            AudioManager.instance.PlaySFX("jump");
         }
 
         if (rb.velocity.y < 0)
