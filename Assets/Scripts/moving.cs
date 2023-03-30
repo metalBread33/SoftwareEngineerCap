@@ -7,11 +7,11 @@ using UnityEngine;
 public class moving : MonoBehaviour
 {
     private float horizontal;
-    [SerializeField] int speed;
-    [SerializeField] int jump_up;
+    private float speed =9f;
+    private float jump_up=7f;
     [SerializeField] float fallFaster;
     private bool is_Right = true;
-    Vector2 vecGravity;
+    //Vector2 vecGravity;
 
     //connects to the Rigidbody 2D in unity 
     [SerializeField] private Rigidbody2D rb;
@@ -20,10 +20,7 @@ public class moving : MonoBehaviour
     [SerializeField] private Transform onGround;
     [SerializeField] private LayerMask groundLayer;
 
-    void Start()
-    {
-        vecGravity = new Vector3(0, -Physics2D.gravity.y);
-    }
+   
 
     void Update()
     {
@@ -33,14 +30,17 @@ public class moving : MonoBehaviour
         //if we are on the ground then it sets our jump_up power to our y value to go up
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
-            AudioManager.instance.PlaySFX("Jump");
+           // AudioManager.instance.PlaySFX("Jump");
+         
             rb.velocity = new Vector2(rb.velocity.x, jump_up);
         }
 
-        if (rb.velocity.y < 0)
+        if(Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
-            rb.velocity -= vecGravity * fallFaster * Time.deltaTime;
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * .5f);
         }
+ 
+       
 
         Flip();
     }
