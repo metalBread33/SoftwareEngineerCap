@@ -28,7 +28,7 @@ public class moving : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
 
         //if we are on the ground then it sets our jump_up power to our y value to go up
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        if (Input.GetButtonDown("Jump") /*&& IsGrounded()*/)
         {
            // AudioManager.instance.PlaySFX("Jump");
          
@@ -53,12 +53,12 @@ public class moving : MonoBehaviour
 
 
     //This checks if we are grounded, if true then the player can jump again
-    private bool IsGrounded()
+    /* private bool IsGrounded()
     {
         //works by making a invisible circle at feet, if it touches the ground then
         //it returns true
         return Physics2D.OverlapCircle(onGround.position, 0.2f, groundLayer);
-    }
+    }*/
 
 
     //This is to make the character face the other way if they turn 
