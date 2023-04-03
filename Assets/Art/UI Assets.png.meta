@@ -1626,7 +1626,7 @@ TextureImporter:
         height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 2, y: 3, z: 2, w: 2}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -5120,9 +5120,9 @@ TextureImporter:
       UI books & more_216: -1257031597
       UI books & more_157: 259221550
       UI books & more_65: 1353432601
-      UI books & more_154: -1608267641
-      UI books & more_93: 1197148054
       UI books & more_167: -1436148727
+      UI books & more_93: 1197148054
+      UI books & more_154: -1608267641
       UI books & more_5: 419869860
       UI books & more_54: -1628795280
       UI books & more_73: 4497690
@@ -5212,6 +5212,7 @@ TextureImporter:
       UI books & more_77: 1579200212
       UI books & more_203: 1181757296
       UI books & more_145: 1508963105
+      UI books & more_217: -1966339728
       UI books & more_149: 416846582
       UI books & more_89: -1964165757
       UI books & more_173: 511571601
@@ -5220,7 +5221,6 @@ TextureImporter:
       UI books & more_156: 115743615
       UI books & more_72: 623004273
       UI books & more_179: -850153457
-      UI books & more_217: -1966339728
       UI books & more_224: 1037398774
       UI books & more_230: -2136437231
       UI books & more_67: -1422392299

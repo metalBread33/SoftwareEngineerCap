@@ -2,15 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PauseGame : MonoBehaviour
 {
     public GameObject pauseMenu;
     public bool paused = false;
+    public TMP_Text coinCount;
+    Points points;
+    [SerializeField] GameObject GameManager;
+
     // Start is called before the first frame update
     void Start()
     {
         pauseMenu.SetActive(false);   
+        points = GameManager.GetComponent<Points>();
     }
 
     // Update is called once per frame
@@ -20,7 +26,9 @@ public class PauseGame : MonoBehaviour
         {
             if (paused) resume();
             else pause();
-        }        
+        }
+
+        coinCount.text = points.coins.ToString(); 
     }
 
     public void pause()
@@ -35,6 +43,11 @@ public class PauseGame : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         paused = false;
+    }
+
+    public void returnToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void quit()
