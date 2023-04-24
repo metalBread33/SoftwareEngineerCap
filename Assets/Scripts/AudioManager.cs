@@ -30,6 +30,11 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void StopTrack()
+    {
+        trackSource.Stop();
+    }
+
     private void Start()
     {
         if (instance == null)

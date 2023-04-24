@@ -10,6 +10,8 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        AudioManager.instance.StopTrack();
+        AudioManager.instance.PlayTrack("Level_1");
     }
 
     // Code for Quit button
