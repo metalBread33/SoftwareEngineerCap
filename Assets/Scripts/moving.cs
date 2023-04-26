@@ -6,12 +6,13 @@ using UnityEngine;
 
 public class moving : MonoBehaviour
 {
+    
     private float horizontal;
     private float speed =9f;
-    private float jump_up=7f;
+    [SerializeField] float jump_up=7f;
     [SerializeField] float fallFaster;
     private bool is_Right = true;
-    //Vector2 vecGravity;
+    Vector2 vecGravity;
 
     //connects to the Rigidbody 2D in unity 
     [SerializeField] private Rigidbody2D rb;
@@ -20,7 +21,12 @@ public class moving : MonoBehaviour
     [SerializeField] private Transform onGround;
     [SerializeField] private LayerMask groundLayer;
 
-   
+
+
+    void Start()
+    {
+        vecGravity = new Vector2(0, -Physics2D.gravity.y);
+    }
 
     void Update()
     {
@@ -28,7 +34,7 @@ public class moving : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
 
         //if we are on the ground then it sets our jump_up power to our y value to go up
-        if (Input.GetButtonDown("Jump") /*&& IsGrounded()*/)
+        if (Input.GetButtonDown("Jump") && IsGrounded())
         {
            // AudioManager.instance.PlaySFX("Jump");
          
@@ -38,11 +44,15 @@ public class moving : MonoBehaviour
         if(Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * .5f);
+            AudioManager.instance.PlaySFX("Jump");
+        }
+
+        if(rb.velocity.y < 0)
+        {
+            rb.velocity -= vecGravity * fallFaster * Time.deltaTime;
         }
  
-       
-
-        Flip();
+         Flip();
     }
 
     private void FixedUpdate()
@@ -53,13 +63,13 @@ public class moving : MonoBehaviour
 
 
     //This checks if we are grounded, if true then the player can jump again
-    /* private bool IsGrounded()
+     private bool IsGrounded()
     {
         //works by making a invisible circle at feet, if it touches the ground then
         //it returns true
         return Physics2D.OverlapCircle(onGround.position, 0.2f, groundLayer);
-    }*/
-
+    }
+    
 
     //This is to make the character face the other way if they turn 
     private void Flip()
@@ -72,5 +82,6 @@ public class moving : MonoBehaviour
             transform.localScale = localScale;
         }
     }
+   
 
 }

@@ -18,6 +18,7 @@ public class Coin : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
+        AudioManager.instance.PlaySFX("Coin");
         coinSound.Play();
         Destroy(gameObject);
         points.playerPoints += 10;

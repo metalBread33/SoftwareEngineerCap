@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c87f6d3943c4a4bd5a32df8a876b4e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallFaster: 2
+  fallFaster: 4
   rb: {fileID: 3776483699657452570}
   onGround: {fileID: 3776483700162141527}
   groundLayer:
@@ -574,7 +574,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3776483700162141527}
-  - component: {fileID: 3776483700162141524}
   m_Layer: 0
   m_Name: onGround
   m_TagString: Untagged
@@ -590,29 +589,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3776483700162141526}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.023, y: -0.453, z: -0.10487342}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.099, y: -0.132, z: -0.10487342}
+  m_LocalScale: {x: 0.8216841, y: 0.8216841, z: 0.8216841}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3776483699657452576}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &3776483700162141524
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3776483700162141526}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.009827418, y: 0.33164138}
-  m_Size: {x: 0.12959449, y: 0.006862097}
-  m_Direction: 1
 --- !u!1 &3776483700232347556
 GameObject:
   m_ObjectHideFlags: 0

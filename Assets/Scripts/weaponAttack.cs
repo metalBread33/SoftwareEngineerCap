@@ -27,6 +27,8 @@ public class weaponAttack : MonoBehaviour
         animator.SetTrigger("SwordAttack");
         Collider2D[] hitEnemies= Physics2D.OverlapCircleAll(SwordAttackPoint.position, SwordAttackRange, enemyLayers);
 
+        AudioManager.instance.PlaySFX("Attack");
+
         foreach (Collider2D enemy in hitEnemies)
         {
             Debug.Log("We hit: ");
