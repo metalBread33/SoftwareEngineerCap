@@ -444,7 +444,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowSpeed: 15
   yOffset: 1
-  target: {fileID: 0}
+  target: {fileID: 568354669}
+--- !u!4 &568354669 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3776483699657452576, guid: d19ddc9037d8ab542a23cdc2a81420fd, type: 3}
+  m_PrefabInstance: {fileID: 1307095120}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &728208328
 GameObject:
   m_ObjectHideFlags: 0
