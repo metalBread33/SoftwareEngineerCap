@@ -18,8 +18,8 @@ public class Coin : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-        AudioManager.instance.PlaySFX("Coin");
-        coinSound.Play();
+        //AudioManager.instance.PlaySFX("Coin");
+        //coinSound.Play();
         Destroy(gameObject);
         points.playerPoints += 10;
         points.coins += 1;
