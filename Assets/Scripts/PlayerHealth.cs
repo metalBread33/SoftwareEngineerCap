@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-
+    public GameObject player;
     public int maxHealth = 100;
     public int health;
     // Start is called before the first frame update
@@ -19,9 +19,9 @@ public class PlayerHealth : MonoBehaviour
         health -= damage;
         if(health <= 0)
         {
-            
-            AudioManager.instance.PlaySFX("Death");
-            Destroy(gameObject);
+            Debug.Log("hit player");
+            //AudioManager.instance.PlaySFX("Death");
+            Destroy(player);
             Scene currentScene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(currentScene.name);
         }
