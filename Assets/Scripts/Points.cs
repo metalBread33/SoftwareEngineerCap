@@ -6,8 +6,8 @@ using TMPro;
 public class Points : MonoBehaviour
 {
 
-    public int playerPoints;
-    public int coins;
+    public static int playerPoints;
+    public static int coins;
     public TMP_Text pointsTxt;
 
     // Start is called before the first frame update

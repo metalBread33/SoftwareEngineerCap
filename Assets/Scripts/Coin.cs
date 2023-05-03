@@ -10,7 +10,7 @@ public class Coin : MonoBehaviour
 
     void Awake()
     {
-    points = GameManager.GetComponent<Points>();
+    //points = GameManager.GetComponent<Points>();
     }
 
     // On player collision points go up by 10, and coin goes up by 1
@@ -21,8 +21,8 @@ public class Coin : MonoBehaviour
         //AudioManager.instance.PlaySFX("Coin");
         //coinSound.Play();
         Destroy(gameObject);
-        points.playerPoints += 10;
-        points.coins += 1;
+        Points.playerPoints += 10;
+        Points.coins += 1;
         }
     }
 }

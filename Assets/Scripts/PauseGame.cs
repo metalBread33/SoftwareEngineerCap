@@ -9,14 +9,14 @@ public class PauseGame : MonoBehaviour
     public GameObject pauseMenu;
     public bool paused = false;
     public TMP_Text coinCount;
-    Points points;
+    //Points points;
     [SerializeField] GameObject GameManager;
 
     // Start is called before the first frame update
     void Start()
     {
         pauseMenu.SetActive(false);   
-        points = GameManager.GetComponent<Points>();
+       // points = GameManager.GetComponent<Points>();
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class PauseGame : MonoBehaviour
             else pause();
         }
 
-        coinCount.text = points.coins.ToString(); 
+        coinCount.text = Points.coins.ToString(); 
     }
 
     public void pause()

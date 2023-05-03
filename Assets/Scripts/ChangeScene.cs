@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    public void ChangeSceneButton(string sceneName){
-        LevelManager.Instance.LoadScene(sceneName);
+    public void ChangeSceneButton(){
+        SceneManager.LoadScene(0);
     }
 }

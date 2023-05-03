@@ -8,7 +8,7 @@ using TMPro;
 public class Level_Stopwatch : MonoBehaviour
 {
     bool stopwatchActive = false;
-    float currentTime;
+    public static float currentTime;
     public int startMinutes;
     public TMP_Text currentTimeText;
 
@@ -43,6 +43,10 @@ public class Level_Stopwatch : MonoBehaviour
 
     public void StopStopwatch(){
         stopwatchActive = false;
+    }
+
+    public void ResetStopwatch(){
+         currentTime = 0;
     }
 
     public float getCurrentTime(){

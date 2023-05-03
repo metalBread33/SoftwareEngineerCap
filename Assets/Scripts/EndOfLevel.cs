@@ -14,7 +14,7 @@ public class EndOfLevel : MonoBehaviour
     void Start()
     {
         lvlSW = GameManager.GetComponent<Level_Stopwatch>();
-        points = GameManager.GetComponent<Points>();
+        //points = GameManager.GetComponent<Points>();
     }
     // On player collision goes to next level
     private void OnTriggerEnter2D(Collider2D collision)
@@ -27,17 +27,28 @@ public class EndOfLevel : MonoBehaviour
 
         // Calculates and adds points based on time spent in level
         if(temp < 60){
-        points.playerPoints += 30;
+        //points.playerPoints += 30;
+        Points.playerPoints += 30;
         }
         else if (temp > 60 && temp < 120){
-        points.playerPoints += 20;
+        //points.playerPoints += 20;
+        Points.playerPoints += 20;
         }
-        else points.playerPoints += 10;
+        else Points.playerPoints += 10;
+        //else points.playerPoints += 10;
         
         // Goes to next level
         Debug.Log("Next Level");
         DontDestroyOnLoad(GameManager);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        lvlSW.ResetStopwatch();
+        lvlSW.StartStopwatch();
         }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("OnSceneLoaded: " + scene.name);
+        Debug.Log(mode);
+    }
     }
 }
